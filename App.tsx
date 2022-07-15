@@ -14,6 +14,11 @@ const globalStyles = css`
   }
 `
 
+const CloudTest = () => {
+    return (
+        <div>cloud test</div>
+    )
+}
 // const
 // let :
 // var : 전역적을 사용 가능
@@ -28,8 +33,14 @@ export default function App() {
                 <Header></Header>
 
                 <Routes>
-                    <Route path={"home"} element={<Home/>}/>
-                    <Route path={"test"} element={<Test/>}/>
+                    <Route path={"/"}>
+                        <Route index element={<Home/>}/>
+                        <Route path={"test"} element={<Test/>}/>
+                        <Route path={"cloud"}>
+                            <Route index element={<CloudTest/>}/>
+                            <Route path={"test"} element={<CloudTest/>}/>
+                        </Route>
+                    </Route>
                 </Routes>
 
                 <Footer></Footer>
