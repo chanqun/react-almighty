@@ -1,9 +1,5 @@
 import React from 'react';
 
-const StudyButton = () => {
-    return (
-        <button>studyButton</button>
-    );
+export const StudyButton = () => {
+    return <button>StudyButton</button>;
 };
-
-export default StudyButton;
