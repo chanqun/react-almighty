@@ -1,10 +1,10 @@
 import React from 'react';
 
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import Test from "./src/page/Test";
-import Home from "./src/page/Home";
-import Header from "./src/component/Header";
-import Footer from "./src/component/Footer";
+import Test from "./packages/beta/src/page/Test";
+import Home from "./packages/beta/src/page/Home";
+import Header from "./packages/beta/src/component/Header";
+import Footer from "./packages/beta/src/component/Footer";
 import {Global, css} from '@emotion/react';
 
 const globalStyles = css`
