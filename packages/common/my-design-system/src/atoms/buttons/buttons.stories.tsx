@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import { StudyButton } from '.';
+import { StudyButton } from './index';
 
 export default {
     title: 'ATOMS/Buttons',
