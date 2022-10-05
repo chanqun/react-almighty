@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "my-design-system": "^1.0.0"
+    "@common/design-system": "^1.0.0"
   }
 }

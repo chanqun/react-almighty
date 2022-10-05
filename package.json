@@ -51,6 +51,6 @@
     "webpack-dev-server": "^4.9.3"
   },
   "workspaces": [
-    "packages/*"
+    "packages/**/*"
   ]
 }
