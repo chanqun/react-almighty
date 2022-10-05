@@ -4,46 +4,54 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const prod = process.env.NODE_ENV === 'production';
 
-module.exports = {
-    mode: prod ? 'production' : 'development',
-    devtool: prod ? 'hidden-source-map' : 'source-map',
+module.exports = ({final, root, title}) => {
+    let config = {
+        mode: prod ? 'production' : 'development',
+        devtool: prod ? 'hidden-source-map' : 'source-map',
+        entry: path.join(root, 'src', 'index.tsx'),
 
-    entry: './index.tsx',
+        resolve: {
+            extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        },
 
-    resolve: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-    },
+        module: {
+            rules: [
+                {
+                    test: /\.tsx?$/,
+                    use: ['babel-loader', 'ts-loader'],
+                },
+            ],
+        },
 
-    module: {
-        rules: [
-            {
-                test: /\.tsx?$/,
-                use: ['babel-loader', 'ts-loader'],
-            },
+        output: {
+            path: path.join(root, 'dist'),
+            filename: '[name].[contenthash].js',
+        },
+
+        devServer: {
+            historyApiFallback: true,
+            // inline: true,
+            port: 3000,
+            hot: true,
+            // publicPath: '/',
+
+        },
+
+        plugins: [
+            new webpack.ProvidePlugin({
+                React: 'react',
+            }),
+            new HtmlWebpackPlugin({
+                template: path.join(__dirname, 'public', 'index.html'),
+                title,
+            }),
+            new webpack.HotModuleReplacementPlugin(),
         ],
-    },
+    };
 
-    output: {
-        path: path.join(__dirname, '/dist'),
-        filename: '[name].[contenthash].js',
-    },
+    if (final) {
+        config = final(config);
+    }
 
-    devServer: {
-        historyApiFallback: true,
-        // inline: true,
-        port: 3000,
-        hot: true,
-        // publicPath: '/',
-
-    },
-
-    plugins: [
-        new webpack.ProvidePlugin({
-            React: 'react',
-        }),
-        new HtmlWebpackPlugin({
-            template: './index.html',
-        }),
-        new webpack.HotModuleReplacementPlugin(),
-    ],
-};
+    return config;
+}

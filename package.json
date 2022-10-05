@@ -5,10 +5,7 @@
   "main": "src/index.tsx",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production",
     "prestart": "npm build",
-    "start": "webpack --mode development",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

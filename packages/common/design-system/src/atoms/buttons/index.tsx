@@ -1,2 +1,2 @@
-export * as SampleButton from './SampleButton';
+export * from './SampleButton';
 export * from './StudyButton'

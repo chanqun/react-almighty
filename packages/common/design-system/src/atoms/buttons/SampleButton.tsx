@@ -1,9 +1,7 @@
 import React from 'react';
 
-const SampleButton = () => {
+export const SampleButton = () => {
     return (
         <button>sampleButton</button>
     );
 };
-
-export default SampleButton;
