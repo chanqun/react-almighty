@@ -5,9 +5,7 @@
   "main": "src/index.tsx",
   "private": true,
   "scripts": {
-    "prestart": "npm build",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "prestart": "npm build"
   },
   "author": "",
   "license": "ISC",
