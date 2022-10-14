@@ -1,11 +1,11 @@
 import React from 'react';
 import {css, Global} from "@emotion/react";
-import {fondFaceStyle} from "~/theme/typography/fondFaceStyle";
+import {fontFaceStyle} from "./typography/fontFaceStyle";
 
 export const GlobalStyle = () => {
     return (
         <Global
-            styles={[fondFaceStyle, css`
+            styles={[fontFaceStyle, css`
               html, body {
                 margin: 0;
                 padding: 0;

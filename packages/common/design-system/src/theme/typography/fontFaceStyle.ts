@@ -1,7 +1,7 @@
 import {css} from "@emotion/react";
-import {woff2} from "./assets/woff2";
+import {woff2} from "./assets";
 
-export const fondFaceStyle = css`
+export const fontFaceStyle = css`
   @font-face {
     font-family: 'Galmuri9 Regular';
     src: url(${woff2.Galmuri}) format('woff2');
