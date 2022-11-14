@@ -1,1 +1,1 @@
-export {default as Galmuri} from './Galmuri9.woff2';
+export {default as Galmuri9} from './Galmuri9.woff2';

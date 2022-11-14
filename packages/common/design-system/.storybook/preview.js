@@ -1,6 +1,7 @@
 import {typography} from "../src/theme";
-import { addParameters } from "@storybook/client-api";
-import { DocsContainer } from "@storybook/addon-docs/blocks";
+import {addParameters} from "@storybook/client-api";
+import {DocsContainer} from "@storybook/addon-docs/blocks";
+import {Global} from "@emotion/react";
 
 export const parameters = {
     actions: {argTypesRegex: "^on[A-Z].*"},
@@ -22,11 +23,10 @@ export const decorators = [
 
 addParameters({
     docs: {
-        container: ({ children, context }) => (
+        container: ({children, context}) => (
             <DocsContainer context={context}>
-                <div>
-                    {children}
-                </div>
+                <Global styles={typography.fontFaceStyle}/>
+                <div>{children}</div>
             </DocsContainer>
         ),
     },

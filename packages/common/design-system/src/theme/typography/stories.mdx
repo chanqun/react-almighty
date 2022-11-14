@@ -1,20 +1,28 @@
 import {Typeset, Meta} from '@storybook/addon-docs/blocks';
-import {FONT_SIZE} from "./fontSize"; import {FONT_WEIGHT} from "./fontWeight";
+import {FONT_SIZE, FONT_WEIGHT, FONT_FAMILY} from ".";
 
 <Meta title="Typography"/>
 
 # Typography
 
 <div>
-    {Object.entries(FONT_WEIGHT).map(([key, value]) => (
+    {FONT_FAMILY.map(fontFamily =>
         <>
-            FONT_WEIGHT: {key} = {value}
-            <Typeset
-                fontSizes={Object.values(FONT_SIZE)}
-                fontWeights={value}
-                fontFamily={'Galmuri9 Regular'}
-                sampleText='Hello world'
-            />
+            <h2>
+                Font Family: <span style={{fontSize: 'inherit', color: '#ff5555'}}>{fontFamily}</span>
+            </h2>
+            {Object.entries(FONT_WEIGHT).map(([key, value]) => (
+                <>
+                    FONT_WEIGHT: {key} = {value}
+                    <Typeset
+                        fontSizes={Object.values(FONT_SIZE)}
+                        fontWeight={value}
+                        fontFamily={fontFamily}
+                        sampleText='Hello world'
+                    />
+                </>
+            ))}
         </>
-    ))}
+    )}
+
 </div>
