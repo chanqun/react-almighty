@@ -8,7 +8,7 @@ module.exports = ({final, root, title}) => {
     let config = {
         mode: prod ? 'production' : 'development',
         devtool: prod ? 'hidden-source-map' : 'source-map',
-        entry: path.join(root, 'src', 'index.tsx'),
+        entry: path.join(root, 'src', 'index.ts'),
 
         resolve: {
             extensions: ['.js', '.jsx', '.ts', '.tsx'],
