@@ -1,1 +1,1 @@
-# become-a-human-with-react
+# react-almighty
